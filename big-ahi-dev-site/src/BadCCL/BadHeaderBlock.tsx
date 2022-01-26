@@ -114,7 +114,7 @@ export function ConditionalContent(
 }
 
 const BadHeaderBlock: React.FC<BadHeaderBlockProps> =({
-	titleIcon,
+  titleIcon,
 	title,
 	headerActions,
 	dataTestId = 'bad-ccl-header-block',
@@ -134,9 +134,9 @@ const BadHeaderBlock: React.FC<BadHeaderBlockProps> =({
 							</Typography>
 						)}
 					</Box>
-					{ConditionalHeaderActions(headerActions, classes.headerActions, dataTestId)}
+					{/* {ConditionalHeaderActions(headerActions, classes.headerActions, dataTestId)} */}
 				</Box>
-				{ConditionalContent(children, classes.contentRow, dataTestId)}
+				{/* {ConditionalContent(children, classes.contentRow, dataTestId)} */}
 			</Box>
 		</div>
 	);

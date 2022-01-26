@@ -1,14 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { UserPermissionsContext } from "../context/UserPermissionsContext";
+import { LocalizationContext } from "../context/LocalizationContext";
 import { Box, Grid } from '@material-ui/core';
 import { PublicLandingPage } from './PublicLandingPage/PublicLandingPage';
 import { JedDashboardPage } from "./JedDashboardPage/JedDashboardPage";
 import { CashTrackPage } from "./CashTrackPage/CashTrackPage";
 import BadBackground from "../BadCCL/BadBackground";
+import { DateTimeFormatter } from "../utils/DateTimeFormatter";
 
 export const BigAhiDevAppContainer = (props: any) => {
-	const { permissions } = useContext(UserPermissionsContext);
+  const { permissions } = useContext(UserPermissionsContext);
+  const { setDateFormatter } = useContext(LocalizationContext);
+
+  useEffect(() => {
+    setDateFormatter(new DateTimeFormatter());
+  }, []);
 
 	function getShowJedDashboard() {
 		return permissions.showJedDashboard ? <Route path="jedDashboard" element={<JedDashboardPage />} /> : null;

@@ -7,6 +7,7 @@ import { BigAhiDevAppContainer } from './containers/BigAhiDevAppContainer';
 import DarkTheme from './BadCCL/themes/DarkTheme';
 import LightTheme from './BadCCL/themes/LightTheme';
 import { Theme, ThemeProvider, Typography } from '@material-ui/core';
+import { LocalizationContextProvider } from './context/LocalizationContext';
 
 const App = () => {
   const themes = { dark: DarkTheme, light: LightTheme };
@@ -21,7 +22,9 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <UserPermissionsContext.Provider value={{ permissions }}>
-        <BigAhiDevAppContainer />
+        <LocalizationContextProvider>
+          <BigAhiDevAppContainer />
+        </LocalizationContextProvider>
       </UserPermissionsContext.Provider>
     </ThemeProvider>
   );

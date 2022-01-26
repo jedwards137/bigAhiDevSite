@@ -1,7 +1,9 @@
-import { Box } from '@material-ui/core';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import React from 'react';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { Box } from '@material-ui/core';
+
 import BadHeaderBlock from '../../BadCCL/BadHeaderBlock';
+import { Tokens } from '../../BadCCL';
 
 export interface PageContainerProps {
 	title: string;
@@ -14,10 +16,11 @@ export const PageContainer = (props: PageContainerProps) => {
 			createStyles({
 				pageContainer: {
 					position: 'absolute',
-					left: theme.spacing(10),
-					right: theme.spacing(2),
+					left: theme.spacing(0),
+					right: theme.spacing(0),
 					bottom: theme.spacing(0),
-					top: theme.spacing(0),
+          top: theme.spacing(0),
+          backgroundColor: Tokens.colors.lightTheme.bgDefault,
 				},
 				pageContent: {
 					position: 'absolute',

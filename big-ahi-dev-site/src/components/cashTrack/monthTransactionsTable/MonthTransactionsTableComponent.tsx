@@ -190,8 +190,13 @@ export const MonthTransactionsTableComponent = (props: MonthTransactionsTableCom
       rowData.isOnEditMode = false;
       return;
     };
+
     let updatedRow = applyTransactionChangesForSave(rowData);
-    props.submitTransactionChangesFuction(updatedRow, MonthTransactionsTableActions.editRow);
+    if (rowData.id) {
+      props.submitTransactionChangesFuction(updatedRow, MonthTransactionsTableActions.editRow);
+    } else {
+      props.submitTransactionChangesFuction(updatedRow, MonthTransactionsTableActions.addRow);
+    }
   }
 
   function onCancelEditRow() {

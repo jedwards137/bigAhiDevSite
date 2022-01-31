@@ -96,7 +96,7 @@ export const CashTrackPage = () => {
 
   async function deleteTransactionById(rowData: Transaction) {
     await axios.delete("http://localhost:7071/api/transactions/" + rowData.transactionId + "/azureId/" + rowData.id)
-    .then((response) => {
+    .then(() => {
       setIsLoading(false);
     }).catch((error) => {
       console.log('error' + error)
@@ -107,12 +107,21 @@ export const CashTrackPage = () => {
   }
 
   async function addRow(rowData: Transaction) {
-
+    await axios.post("http://localhost:7071/api/transactions/", rowData)
+    .then(() => {
+      setIsLoading(false);
+    })
+    .catch((error) => {
+      console.log('error' + error);
+    })
+    .finally(() => {
+      getTransactionsByYearAndMonth();
+    });
   }
 
   async function editRowById(rowData: Transaction) {
     await axios.put("http://localhost:7071/api/transactions/" + rowData.transactionId + "/azureId/" + rowData.id, rowData)
-    .then((response) => {
+    .then(() => {
       setIsLoading(false);
     })
     .catch((error) => {

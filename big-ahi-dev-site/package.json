@@ -1,6 +1,7 @@
 {
   "name": "big-ahi-dev-site",
   "version": "0.1.0",
+  "proxy": "http://localhost:7071",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.3",
@@ -9,10 +10,13 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.4.0",
+    "@types/lodash": "^4.14.178",
     "@types/luxon": "^2.0.9",
     "@types/node": "^16.11.21",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "axios": "^0.25.0",
+    "lodash": "^4.17.21",
     "luxon": "^2.3.0",
     "material-table": "^1.69.3",
     "react": "^17.0.2",

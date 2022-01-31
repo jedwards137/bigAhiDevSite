@@ -3,7 +3,7 @@ import { Box } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Tokens } from '../../BadCCL';
 //import { useTheme } from '@mui/material/styles';
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer, CartesianGrid } from 'recharts';
 //import Title from './Title';
 
 // Generate Sales Data
@@ -45,12 +45,24 @@ export const YearTransactionsChartComponent = (props: any) => {
 			})
 		);
 	}
-	const classes = getStyles()();
+  const classes = getStyles()();
+  
+  const data = [{name: 'Page A', uv: 400, pv: 2400, amt: 2400}];
+
+  const renderLineChart = (
+    <LineChart width={600} height={300} data={data}>
+      <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+      <CartesianGrid stroke="#ccc" />
+      <XAxis dataKey="name" />
+      <YAxis />
+    </LineChart>
+  );
 
 	return (
 		<React.Fragment>
+      {renderLineChart}
       {/* <Title>Today</Title> */}
-      <ResponsiveContainer>
+      {/* <ResponsiveContainer>
         <LineChart
           data={data}
           margin={{
@@ -89,7 +101,7 @@ export const YearTransactionsChartComponent = (props: any) => {
             dot={false}
           />
         </LineChart>
-      </ResponsiveContainer>
+      </ResponsiveContainer> */}
     </React.Fragment>
 	);
 };

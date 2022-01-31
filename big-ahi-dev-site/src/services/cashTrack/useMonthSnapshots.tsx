@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 
-import { MonthSnapshot } from "../../model/MonthSnapshot/MonthSnapshot.model";
-import { MonthSnapshotCategory } from "../../model/MonthSnapshot/MonthSnapshotCategory.model";
+import { MonthSnapshot } from "../../model/cashTrack/monthSnapshot/MonthSnapshot.model";
+import { MonthSnapshotCategory } from "../../model/cashTrack/monthSnapshot/MonthSnapshotCategory.model";
 
 export const useMonthSnapshots = () => {
   const [data, setData] = useState<MonthSnapshot[]>([]);

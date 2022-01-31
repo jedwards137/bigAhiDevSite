@@ -3,9 +3,9 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { UserPermissionsContext } from "../context/UserPermissionsContext";
 import { LocalizationContext } from "../context/LocalizationContext";
 import { Box, Grid } from '@material-ui/core';
-import { PublicLandingPage } from './PublicLandingPage/PublicLandingPage';
-import { JedDashboardPage } from "./JedDashboardPage/JedDashboardPage";
-import { CashTrackPage } from "./CashTrackPage/CashTrackPage";
+import { PublicLandingPage } from './publicLandingPage/PublicLandingPage';
+import { JedDashboardPage } from "./jedDashboardPage/JedDashboardPage";
+import { CashTrackPage } from "./cashTrackPage/CashTrackPage";
 import BadBackground from "../BadCCL/BadBackground";
 import { DateTimeFormatter } from "../utils/DateTimeFormatter";
 

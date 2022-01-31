@@ -24,8 +24,8 @@ export const applyTransactionChangesForSave = (transaction: Transaction): Transa
   })
   tmpTransaction.date = tmpTransaction.date.toISO({ includeOffset: false });
   
-  let updatedRow: Transaction = tmpTransaction;
-  return updatedRow;
+  let updatedTransaction: Transaction = tmpTransaction;
+  return updatedTransaction;
 }
 
 export const createTransactionsListFromApiResponse = (response: any[]): Transaction[] => {

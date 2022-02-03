@@ -3,7 +3,7 @@ import { TransactionType } from "./TransactionType.model";
 
 export class Transaction {
   id?: string = '';
-  transactionId: string = '';
+  userId: string = '';
   date: DateTime = DateTime.now();
   description: string = '';
   category: string = '';
@@ -14,9 +14,9 @@ export class Transaction {
   type: TransactionType = TransactionType.withdrawal;
   _changesTracker: { [key: string]: any } = {};
 
-  static fromDefault(transactionId: string) {
+  static fromDefault(userId: string) {
     let transaction = new Transaction();
-    transaction.transactionId = transactionId;
+    transaction.userId = userId;
     transaction.isOnEditMode = true;
     transaction._changesTracker = {
       description: '',
@@ -31,7 +31,7 @@ export class Transaction {
   static fromValues(item: any) {
     let transaction = new Transaction();
     transaction.id = item['id'];
-    transaction.transactionId = item['transactionId'];
+    transaction.userId = item['userId'];
     transaction.date = DateTime.fromISO(item['date']);
     transaction.description = item['description'];
     transaction.category = item['category'];

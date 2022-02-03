@@ -39,7 +39,7 @@ export const createTransactionsListFromApiResponse = (response: any[]): Transact
 
 export const rowHasValidChanges = (rowData: Transaction): boolean => {
   let rowChanges = rowData._changesTracker;
-  if (rowChanges['transactionId'] === '') return false;
+  if (rowChanges['userId'] === '') return false;
   if (rowChanges['description'] === '') return false;
   if (rowChanges['category'] === '') return false;
   if (rowChanges['subCategory'] === '') return false;

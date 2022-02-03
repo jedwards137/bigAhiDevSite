@@ -95,7 +95,7 @@ export const CashTrackPage = () => {
   }
 
   async function deleteTransactionById(rowData: Transaction) {
-    await axios.delete("http://localhost:7071/api/transactions/" + rowData.transactionId + "/azureId/" + rowData.id)
+    await axios.delete("http://localhost:7071/api/transactions/" + rowData.userId + "/azureId/" + rowData.id)
     .then(() => {
       setIsLoading(false);
     }).catch((error) => {
@@ -120,7 +120,7 @@ export const CashTrackPage = () => {
   }
 
   async function editRowById(rowData: Transaction) {
-    await axios.put("http://localhost:7071/api/transactions/" + rowData.transactionId + "/azureId/" + rowData.id, rowData)
+    await axios.put("http://localhost:7071/api/transactions/" + rowData.userId + "/azureId/" + rowData.id, rowData)
     .then(() => {
       setIsLoading(false);
     })

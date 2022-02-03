@@ -12,7 +12,6 @@ import DateInputComponent from './inputComponents/DateInputComponent';
 import GenericInputComponent from './inputComponents/GenericInputComponent';
 import AmountInputComponent from './inputComponents/AmountInputComponent';
 import { applyTransactionChangesForSave, rowHasValidChanges, rowHasChanges } from '../../../utils/cashTrack/CashTrackHelper';
-import { DateTime } from 'luxon';
 
 export interface MonthTransactionsTableComponentProps {
   monthId: number;

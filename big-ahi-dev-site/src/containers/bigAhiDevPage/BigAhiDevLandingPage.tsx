@@ -7,7 +7,7 @@ import { ValuesComponent } from '../../components/bigAhiDev/ValuesComponent';
 import { ContactComponent } from '../../components/bigAhiDev/ContactComponent';
 import { CopyrightComponent } from '../../components/bigAhiDev/CopyrightComponent';
 
-export const JedDashboardPage = () => {
+export const BigAhiDevLandingPage = () => {
 	
 	function getStyles() {
 		return makeStyles((theme: Theme) => 

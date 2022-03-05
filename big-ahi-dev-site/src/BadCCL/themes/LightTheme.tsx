@@ -82,11 +82,11 @@ const theme = createTheme({
     },
     h2: {
       fontSize: Tokens.sizing.title2,
-      fontWeight: 500,
+      fontWeight: 700,
     },
     h3: {
       fontSize: Tokens.sizing.title3,
-      fontWeight: 500,
+      fontWeight: 700,
     },
     h4: {
       fontSize: Tokens.sizing.title4,

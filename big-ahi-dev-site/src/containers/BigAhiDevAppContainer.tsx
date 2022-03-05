@@ -3,11 +3,11 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { UserPermissionsContext } from "../context/UserPermissionsContext";
 import { LocalizationContext } from "../context/LocalizationContext";
 import { Box, Grid } from '@material-ui/core';
-import { PublicLandingPage } from './publicLandingPage/PublicLandingPage';
+import { BigAhiDevLandingPage } from './bigAhiDevPage/BigAhiDevLandingPage';
 import { JedDashboardPage } from "./jedDashboardPage/JedDashboardPage";
-import { CashTrackPage } from "./cashTrackPage/CashTrackPage";
 import BadBackground from "../BadCCL/BadBackground";
 import { DateTimeFormatter } from "../utils/DateTimeFormatter";
+//import { CashTrackPage } from "./cashTrackPage/CashTrackPage";
 
 export const BigAhiDevAppContainer = (props: any) => {
   const { permissions } = useContext(UserPermissionsContext);
@@ -21,9 +21,9 @@ export const BigAhiDevAppContainer = (props: any) => {
 		return permissions.showJedDashboard ? <Route path="jedDashboard" element={<JedDashboardPage />} /> : null;
 	}
 
-	function getShowCashTrack() {
-		return permissions.showCashTrack ? <Route path="cashTrack" element={<CashTrackPage />} /> : null;
-	}
+	// function getShowCashTrack() {
+	// 	return permissions.showCashTrack ? <Route path="cashTrack" element={<CashTrackPage />} /> : null;
+	// }
 
 	function getContents() {
 		return (
@@ -33,9 +33,9 @@ export const BigAhiDevAppContainer = (props: any) => {
 					<Box>
             <BrowserRouter>
               <Routes>
-                <Route path="/" element={<PublicLandingPage />} />
+                <Route path="/" element={<BigAhiDevLandingPage />} />
                 {getShowJedDashboard()}
-                {getShowCashTrack()}
+                {/* {getShowCashTrack()} */}
               </Routes>
             </BrowserRouter>
 					</Box>
